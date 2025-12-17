@@ -1,17 +1,27 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.2.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"
-    }
-}
+android {
+    namespace "com.jibu.app"
+    compileSdk 34
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
+    defaultConfig {
+        applicationId "com.jibu.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
     }
 }
